@@ -1,4 +1,3 @@
-# -avx--advance-2nd-module-of-4th-course-
 # Avalanche HYPERSDK PROJECT
 
 This project uses HyperSDK that provides the ability to create a custom virtual machine, which offers complete control over a custom blockchain. By using the HyperSDK, we have full control over the rules and functionality of your chain, allowing us to create a custom blockchain that is tailored to your startup's specific needs. 
@@ -6,26 +5,8 @@ This project uses HyperSDK that provides the ability to create a custom virtual 
 
 ## Description 
 ```consts/consts.go``` contains the constants that is accessible across the hyperVM. The HRP, Name, and Symbol constants define information about the TokenVM, including its Human-Readable Part (HRP), name, and symbol.
-```GO
-const (
-	// TODO: choose a human-readable part for your hyperchain
-	HRP = "Pizza"
-	// TODO: choose a name for your hyperchain
-	Name = "Ramkumar"
-	// TODO: choose a token symbol
-	Symbol = "YZA"
-)
-```
-This code is added in the ```consts/consts.go```.
 
 ```registry/registry.go``` contains the action that will be performed in the terminal during interaction.
-```GO
-// TODO: register action: actions.CreateAsset
-consts.ActionRegistry.Register(&actions.CreateAsset{}, actions.UnmarshalCreateAsset, false),
-// TODO: register action: actions.MintAsset
-consts.ActionRegistry.Register(&actions.MintAsset{}, actions.UnmarshalMintAsset, false),
-```
-This code is added in ```registry/registry.go```
 
 ## Steps of Execution
 This project is execute on WSl on windows and GO installed inside wsl.<br>
@@ -113,27 +94,12 @@ metadata: GoCoin supply: 100 warp: false
 balance: 100 2fwV7cjRpH7jmK43BWtUc6uTo5Py6wKXBfdQ4CH6BwRMmEmdDe
 ```
 
-
-### Transfer assets
-spilt terminal and in 1st run the command 
+### Additional to watcht the blockchain
+run the command 
 ```javascript
 ./build/token-cli chain watch
 ```
-enter 0 and execute it
-in second terminal run
-```javascript
-./build/token-cli action transfer
-```
-then enter the assetID which we earlier created and enter the recepient address in this case we are don't have other address so we will transfer to ourself and see the transaction in first terminal. enter the amount and continue.
-In first terminal output will be like:
-```javascript
-watching for new blocks on WLRGfhBikjj1YoJ2wXC8oagKdfL7k1EudK2kTzMfjHFzPyLdk 👀
-height:5 txs:1 units:472 root:xbWQpZbEG1SgaUnL4TLcd6XHBa9WxYLdRFru5YDnUCYEqwfUT
-✅ edFd4xPGkRSrBUsmvtvhDnoYJCW2VutzmqCNq1FJXmBLygz46 actor: token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp units: 472 summary (*actions.Transfer): [100 2pG64yry0dl97nsjzf3yp units: 472 summary (*actions.Transfer): [100 2pG64Tt3hAUVK627fGnpqTPKjz8RsPmnBLXvA9ijQZs
-Tt3hAUVK627fGnpqTPKjz8RsPmnBLXvA9ijQZs3Q2JoQs -> token1rvzhmceq997zntgvravfagsks6w0ryud3rylh4cdvayry0dl97nsjzf3yp]
-```
-This represents 100 assets were transfered.
-
+and from the listed chainID enter the desired index of the chainID and it will start live watching of the blockchain.
 
 ### Closing 
 run the command 
